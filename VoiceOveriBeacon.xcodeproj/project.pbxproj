@@ -18,6 +18,8 @@
 		14FD1C752AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */; };
 		14FD1C772AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */; };
 		14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */; };
+		14FD1C8A2AA1C7B50090E3CC /* iBeaconInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C892AA1C7B50090E3CC /* iBeaconInfos.swift */; };
+		14FD1C8C2AA1CB390090E3CC /* iBeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C8B2AA1CB390090E3CC /* iBeaconService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITests.swift; sourceTree = "<group>"; };
 		14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
+		14FD1C892AA1C7B50090E3CC /* iBeaconInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconInfos.swift; sourceTree = "<group>"; };
+		14FD1C8B2AA1CB390090E3CC /* iBeaconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				14FD1C862AA1C2010090E3CC /* Constant */,
+				14FD1C8B2AA1CB390090E3CC /* iBeaconService.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
+				14FD1C892AA1C7B50090E3CC /* iBeaconInfos.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 				14FD1C5B2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld in Sources */,
 				14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */,
 				14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */,
+				14FD1C8A2AA1C7B50090E3CC /* iBeaconInfos.swift in Sources */,
+				14FD1C8C2AA1CB390090E3CC /* iBeaconService.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
 				14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */,
 			);
@@ -406,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -460,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -480,11 +488,16 @@
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceOveriBeacon/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -508,11 +521,16 @@
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceOveriBeacon/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

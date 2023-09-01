@@ -40,13 +40,17 @@ class HomePageViewController: UIViewController {
     }
 
     @IBAction func onclickNearestAreaButton(_ sender: Any) {
+        print("onclickNearestAreaButton")
+        
     }
     
     @IBAction func onclickNearbyAreaButton(_ sender: Any) {
+        print("onclickNearbyAreaButton")
     }
     
     @IBAction func onclickSoundSettingButton(_ sender: Any) {
-        
+        print("onclickSoundSettingButton")
+
     }
     
     
