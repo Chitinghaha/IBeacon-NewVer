@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */; };
 		14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */; };
-		14FD1C552AA1B76A0090E3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C542AA1B76A0090E3CC /* ViewController.swift */; };
+		14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */; };
 		14FD1C582AA1B76A0090E3CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FD1C562AA1B76A0090E3CC /* Main.storyboard */; };
 		14FD1C5B2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C592AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld */; };
 		14FD1C5D2AA1B76B0090E3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FD1C5C2AA1B76B0090E3CC /* Assets.xcassets */; };
@@ -17,6 +17,7 @@
 		14FD1C6B2AA1B76B0090E3CC /* VoiceOveriBeaconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C6A2AA1B76B0090E3CC /* VoiceOveriBeaconTests.swift */; };
 		14FD1C752AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */; };
 		14FD1C772AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */; };
+		14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 		14FD1C4D2AA1B76A0090E3CC /* VoiceOveriBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceOveriBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14FD1C542AA1B76A0090E3CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		14FD1C572AA1B76A0090E3CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14FD1C5A2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceOveriBeacon.xcdatamodel; sourceTree = "<group>"; };
 		14FD1C5C2AA1B76B0090E3CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		14FD1C702AA1B76B0090E3CC /* VoiceOveriBeaconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceOveriBeaconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITests.swift; sourceTree = "<group>"; };
 		14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,10 @@
 		14FD1C4F2AA1B76A0090E3CC /* VoiceOveriBeacon */ = {
 			isa = PBXGroup;
 			children = (
+				14FD1C842AA1C1ED0090E3CC /* Feature */,
+				14FD1C832AA1C1E10090E3CC /* Shared */,
 				14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */,
 				14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */,
-				14FD1C542AA1B76A0090E3CC /* ViewController.swift */,
-				14FD1C562AA1B76A0090E3CC /* Main.storyboard */,
 				14FD1C5C2AA1B76B0090E3CC /* Assets.xcassets */,
 				14FD1C5E2AA1B76B0090E3CC /* LaunchScreen.storyboard */,
 				14FD1C612AA1B76B0090E3CC /* Info.plist */,
@@ -128,6 +130,39 @@
 				14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */,
 			);
 			path = VoiceOveriBeaconUITests;
+			sourceTree = "<group>";
+		};
+		14FD1C832AA1C1E10090E3CC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				14FD1C862AA1C2010090E3CC /* Constant */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		14FD1C842AA1C1ED0090E3CC /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				14FD1C852AA1C1F50090E3CC /* HomePage */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		14FD1C852AA1C1F50090E3CC /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */,
+				14FD1C562AA1B76A0090E3CC /* Main.storyboard */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		14FD1C862AA1C2010090E3CC /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14FD1C5B2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld in Sources */,
-				14FD1C552AA1B76A0090E3CC /* ViewController.swift in Sources */,
+				14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */,
+				14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
 				14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */,
 			);
