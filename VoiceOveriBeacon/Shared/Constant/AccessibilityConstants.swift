@@ -8,7 +8,7 @@
 import Foundation
 
 struct AccessibilityConstants {
-    static let NearestAreaButton = "nearest area button"
-    static let NearbyAreaButton = "nearby Area Button"
-    static let SoundSettingButton = "sound Setting Button"
+    static let NearestAreaButton = "最近的物體"
+    static let NearbyAreaButton = "附近所有物體"
+    static let SoundSettingButton = "音效設定"
 }

@@ -18,8 +18,22 @@
 		14FD1C752AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */; };
 		14FD1C772AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */; };
 		14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */; };
-		14FD1C8A2AA1C7B50090E3CC /* iBeaconInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C892AA1C7B50090E3CC /* iBeaconInfos.swift */; };
-		14FD1C8C2AA1CB390090E3CC /* iBeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C8B2AA1CB390090E3CC /* iBeaconService.swift */; };
+		14FD1C8A2AA1C7B50090E3CC /* iBeaconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */; };
+		2A3E9C002AA3552D00A1C3F2 /* iBeaconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */; };
+		2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */; };
+		2A3E9C082AA362A000A1C3F2 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C052AA362A000A1C3F2 /* AudioPlayerService.swift */; };
+		2A3E9C092AA362A000A1C3F2 /* FileReadWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C062AA362A000A1C3F2 /* FileReadWriteService.swift */; };
+		2A3E9C0F2AA3675400A1C3F2 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E9C0B2AA3675400A1C3F2 /* start.mp3 */; };
+		2A3E9C102AA3675400A1C3F2 /* beep-08b.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E9C0C2AA3675400A1C3F2 /* beep-08b.mp3 */; };
+		2A3E9C112AA3675400A1C3F2 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E9C0D2AA3675400A1C3F2 /* beep.mp3 */; };
+		2A3E9C122AA3675400A1C3F2 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E9C0E2AA3675400A1C3F2 /* end.mp3 */; };
+		2A3E9C142AA367D300A1C3F2 /* SoundEffectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */; };
+		2A3E9C162AA36B2500A1C3F2 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E9C152AA36B2500A1C3F2 /* Resource.bundle */; };
+		2A3E9C1A2AA36CF100A1C3F2 /* SoundSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C182AA36CF100A1C3F2 /* SoundSettingViewController.swift */; };
+		2A3E9C1B2AA36CF100A1C3F2 /* SoundSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E9C192AA36CF100A1C3F2 /* SoundSettingViewController.xib */; };
+		2A3E9C202AA3737400A1C3F2 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C1D2AA3737400A1C3F2 /* UIView+Toast.swift */; };
+		2A3E9C212AA3737400A1C3F2 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C1E2AA3737400A1C3F2 /* UIView+Nib.swift */; };
+		2A3E9C222AA3737400A1C3F2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C1F2AA3737400A1C3F2 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +69,22 @@
 		14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITests.swift; sourceTree = "<group>"; };
 		14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
-		14FD1C892AA1C7B50090E3CC /* iBeaconInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconInfos.swift; sourceTree = "<group>"; };
-		14FD1C8B2AA1CB390090E3CC /* iBeaconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconService.swift; sourceTree = "<group>"; };
+		14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconModel.swift; sourceTree = "<group>"; };
+		2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconViewModel.swift; sourceTree = "<group>"; };
+		2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizerService.swift; sourceTree = "<group>"; };
+		2A3E9C052AA362A000A1C3F2 /* AudioPlayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		2A3E9C062AA362A000A1C3F2 /* FileReadWriteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileReadWriteService.swift; sourceTree = "<group>"; };
+		2A3E9C0B2AA3675400A1C3F2 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		2A3E9C0C2AA3675400A1C3F2 /* beep-08b.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-08b.mp3"; sourceTree = "<group>"; };
+		2A3E9C0D2AA3675400A1C3F2 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		2A3E9C0E2AA3675400A1C3F2 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
+		2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectConstant.swift; sourceTree = "<group>"; };
+		2A3E9C152AA36B2500A1C3F2 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		2A3E9C182AA36CF100A1C3F2 /* SoundSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingViewController.swift; sourceTree = "<group>"; };
+		2A3E9C192AA36CF100A1C3F2 /* SoundSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoundSettingViewController.xib; sourceTree = "<group>"; };
+		2A3E9C1D2AA3737400A1C3F2 /* UIView+Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
+		2A3E9C1E2AA3737400A1C3F2 /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		2A3E9C1F2AA3737400A1C3F2 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +167,13 @@
 		14FD1C832AA1C1E10090E3CC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2A3E9C152AA36B2500A1C3F2 /* Resource.bundle */,
+				2A3E9C1C2AA3737400A1C3F2 /* Extension */,
+				2A3E9C0A2AA3675400A1C3F2 /* Sounds */,
+				2A3E9C032AA362A000A1C3F2 /* Service */,
+				2A3E9C012AA3556700A1C3F2 /* Model */,
+				2A3E9BFE2AA3551A00A1C3F2 /* ViewModel */,
 				14FD1C862AA1C2010090E3CC /* Constant */,
-				14FD1C8B2AA1CB390090E3CC /* iBeaconService.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -148,6 +181,7 @@
 		14FD1C842AA1C1ED0090E3CC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				2A3E9C172AA36CD500A1C3F2 /* SoundSetting */,
 				14FD1C852AA1C1F50090E3CC /* HomePage */,
 			);
 			path = Feature;
@@ -165,10 +199,66 @@
 		14FD1C862AA1C2010090E3CC /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */,
 				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
-				14FD1C892AA1C7B50090E3CC /* iBeaconInfos.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		2A3E9BFE2AA3551A00A1C3F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2A3E9C012AA3556700A1C3F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2A3E9C032AA362A000A1C3F2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */,
+				2A3E9C052AA362A000A1C3F2 /* AudioPlayerService.swift */,
+				2A3E9C062AA362A000A1C3F2 /* FileReadWriteService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2A3E9C0A2AA3675400A1C3F2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2A3E9C0B2AA3675400A1C3F2 /* start.mp3 */,
+				2A3E9C0C2AA3675400A1C3F2 /* beep-08b.mp3 */,
+				2A3E9C0D2AA3675400A1C3F2 /* beep.mp3 */,
+				2A3E9C0E2AA3675400A1C3F2 /* end.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		2A3E9C172AA36CD500A1C3F2 /* SoundSetting */ = {
+			isa = PBXGroup;
+			children = (
+				2A3E9C182AA36CF100A1C3F2 /* SoundSettingViewController.swift */,
+				2A3E9C192AA36CF100A1C3F2 /* SoundSettingViewController.xib */,
+			);
+			path = SoundSetting;
+			sourceTree = "<group>";
+		};
+		2A3E9C1C2AA3737400A1C3F2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A3E9C1D2AA3737400A1C3F2 /* UIView+Toast.swift */,
+				2A3E9C1E2AA3737400A1C3F2 /* UIView+Nib.swift */,
+				2A3E9C1F2AA3737400A1C3F2 /* UIColor+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +365,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3E9C102AA3675400A1C3F2 /* beep-08b.mp3 in Resources */,
 				14FD1C602AA1B76B0090E3CC /* LaunchScreen.storyboard in Resources */,
+				2A3E9C112AA3675400A1C3F2 /* beep.mp3 in Resources */,
+				2A3E9C122AA3675400A1C3F2 /* end.mp3 in Resources */,
+				2A3E9C0F2AA3675400A1C3F2 /* start.mp3 in Resources */,
+				2A3E9C1B2AA36CF100A1C3F2 /* SoundSettingViewController.xib in Resources */,
 				14FD1C5D2AA1B76B0090E3CC /* Assets.xcassets in Resources */,
 				14FD1C582AA1B76A0090E3CC /* Main.storyboard in Resources */,
+				2A3E9C162AA36B2500A1C3F2 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,13 +398,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3E9C142AA367D300A1C3F2 /* SoundEffectConstant.swift in Sources */,
 				14FD1C5B2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld in Sources */,
 				14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */,
 				14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */,
-				14FD1C8A2AA1C7B50090E3CC /* iBeaconInfos.swift in Sources */,
-				14FD1C8C2AA1CB390090E3CC /* iBeaconService.swift in Sources */,
+				2A3E9C002AA3552D00A1C3F2 /* iBeaconViewModel.swift in Sources */,
+				14FD1C8A2AA1C7B50090E3CC /* iBeaconModel.swift in Sources */,
+				2A3E9C212AA3737400A1C3F2 /* UIView+Nib.swift in Sources */,
+				2A3E9C1A2AA36CF100A1C3F2 /* SoundSettingViewController.swift in Sources */,
+				2A3E9C092AA362A000A1C3F2 /* FileReadWriteService.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
+				2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */,
+				2A3E9C202AA3737400A1C3F2 /* UIView+Toast.swift in Sources */,
 				14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */,
+				2A3E9C082AA362A000A1C3F2 /* AudioPlayerService.swift in Sources */,
+				2A3E9C222AA3737400A1C3F2 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
