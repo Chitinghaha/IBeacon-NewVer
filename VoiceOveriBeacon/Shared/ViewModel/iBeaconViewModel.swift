@@ -23,8 +23,6 @@ class iBeaconViewModel {
         var res: iBeaconModel? = nil
         for i in 0..<self.ibeacons.count {
             let ibeacon = self.ibeacons[i]
-            print(ibeacon)
-            print(clbeacon)
             if (ibeacon.uuidString.lowercased() == clbeacon.uuid.uuidString.lowercased() && NSNumber(integerLiteral: ibeacon.major) == clbeacon.major && NSNumber(integerLiteral: ibeacon.minor) == clbeacon.minor) {
                 res = ibeacon
                 break

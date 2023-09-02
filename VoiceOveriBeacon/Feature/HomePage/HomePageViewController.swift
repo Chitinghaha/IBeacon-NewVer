@@ -92,7 +92,7 @@ class HomePageViewController: UIViewController {
     @IBAction func onclickSoundSettingButton(_ sender: Any) {
         print("onclickSoundSettingButton")
 //        let vc = SoundSettingViewController(nibName: "SoundSettingViewController", bundle: nil)
-//        
+//
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -124,7 +124,7 @@ extension HomePageViewController: CLLocationManagerDelegate {
         guard region is CLBeaconRegion else { return }
         let region = region as! CLBeaconRegion
         let constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
-
+        print("didExitRegion:\(region)")
         // 在這裡做一些離開 region 的處理，例如提供一些提示
         guard CLLocationManager.isRangingAvailable() else { return }
         // 既然離開 region 了，那就停止偵測跟裝置的距離
@@ -159,8 +159,7 @@ extension HomePageViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         // beacons 是一個 array，裡頭的 beacon 由近到遠排序
-//        print("beacons:\(beacons)")
-        
+        print("beacons:\(beacons)")
         var i = 0
         
         while (i < self.rangingiBeacons.count) {
@@ -177,9 +176,16 @@ extension HomePageViewController: CLLocationManagerDelegate {
             if (!self.rangingiBeacons.contains(where: { $0 == ibeacon })) {
                 self.rangingiBeacons.append(ibeacon)
             }
+            else {
+                if (beacon.accuracy <= 0) {
+                    self.rangingiBeacons.removeAll(where: { $0 == ibeacon })
+                }
+            }
         }
         
-        if let beacon = beacons.first {
+        if let beacon = beacons.first(where: { beacon in
+            beacon.accuracy > 0
+        }) {
             // 取得距離最近的 beacon 了，作些事情吧
             self.nearestiBeacon = iBeaconViewModel.shared.transformToiBeaconModel(from: beacon)
         }
