@@ -73,24 +73,32 @@ class HomePageViewController: UIViewController {
     @IBAction func onclickNearestAreaButton(_ sender: Any) {
         print("onclickNearestAreaButton")
         
+        
         if let ibeacon = self.nearestiBeacon {
-            AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.name)
-            AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.description)
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.name)
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.description)
+            }
         }
 
     }
     
     @IBAction func onclickNearbyAreaButton(_ sender: Any) {
         print("onclickNearbyAreaButton")
-        
-        self.rangingiBeacons.forEach {
-            AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.name)
-            AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.description)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+            self.rangingiBeacons.forEach {
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.name)
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.description)
+            }
         }
     }
     
     @IBAction func onclickSoundSettingButton(_ sender: Any) {
         print("onclickSoundSettingButton")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1.8) {
+            AVSpeechSynthesizerService.shared.continuouslySpeak(content: "功能測試")
+
+        }
 //        let vc = SoundSettingViewController(nibName: "SoundSettingViewController", bundle: nil)
 //
 //        self.navigationController?.pushViewController(vc, animated: true)
