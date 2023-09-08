@@ -29,8 +29,6 @@ struct iBeaconModel: Codable, Equatable {
         iBeaconType(rawValue: self.rawType) ?? .normal
     }}
     
-//    var proximity:
-    
     static func == (lhs: iBeaconModel, rhs: iBeaconModel) -> Bool {
         // Define your equality logic here
         return lhs.uuidString == rhs.uuidString &&
