@@ -10,6 +10,7 @@ import CoreLocation
 
 class HomePageViewController: UIViewController {
 
+    @IBOutlet weak var testLabel: UILabel!
     
     @IBOutlet weak var nearestAreaView: UIView!
     
@@ -73,11 +74,16 @@ class HomePageViewController: UIViewController {
     @IBAction func onclickNearestAreaButton(_ sender: Any) {
         print("onclickNearestAreaButton")
         
-        
-        if let ibeacon = self.nearestiBeacon {
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.name)
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.description)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
+            if let ibeacon = self.nearestiBeacon {
+                UIAccessibility.post(notification: .announcement, argument: ibeacon.name + ibeacon.description)
+
+//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.name)
+//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: ibeacon.description)
+            }
+            else {
+                UIAccessibility.post(notification: .announcement, argument: "無法取得最近的ibeacon資料")
+
             }
         }
 
@@ -85,10 +91,19 @@ class HomePageViewController: UIViewController {
     
     @IBAction func onclickNearbyAreaButton(_ sender: Any) {
         print("onclickNearbyAreaButton")
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
-            self.rangingiBeacons.forEach {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.name)
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.description)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            
+            if (self.rangingiBeacons.count > 0) {
+                self.rangingiBeacons.forEach {
+                    UIAccessibility.post(notification: .announcement, argument: $0.name + $0.description)
+                    //                UIAccessibility.post(notification: .pauseAssistiveTechnology, argument: nil)
+                    
+                    //                AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.name)
+                    //                AVSpeechSynthesizerService.shared.continuouslySpeak(content: $0.description)
+                }
+            }
+            else {
+                UIAccessibility.post(notification: .announcement, argument: "無法取得附近的ibeacon資料")
             }
         }
     }
@@ -167,7 +182,14 @@ extension HomePageViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         // beacons 是一個 array，裡頭的 beacon 由近到遠排序
-        print("beacons:\(beacons)")
+        print("偵測到的beacons:\(beacons)")
+        if (beacons.count > 0) {
+            self.testLabel.text = String(describing: beacons)
+        }
+        else {
+            self.testLabel.text = "搜尋中"
+        }
+        
         var i = 0
         
         while (i < self.rangingiBeacons.count) {
@@ -197,5 +219,8 @@ extension HomePageViewController: CLLocationManagerDelegate {
             // 取得距離最近的 beacon 了，作些事情吧
             self.nearestiBeacon = iBeaconViewModel.shared.transformToiBeaconModel(from: beacon)
         }
+        
+        print("程式處理中的beacons:\(self.rangingiBeacons)")
+        print("程式處理中最近的beacons:\(String(describing: self.nearestiBeacon))")
     }
 }

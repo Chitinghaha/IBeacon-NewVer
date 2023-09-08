@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum iBeaconType: Int {
     case normal = 0
@@ -20,6 +21,8 @@ struct iBeaconModel: Codable, Equatable {
     let name: String
     // 種類：0 = 正常, 1 = 障礙物
     let rawType: Int
+    
+    var proximity: Int? = 0
     
     var uuid: UUID { get {
         UUID(uuidString: self.uuidString) ?? UUID(uuidString: iBeaconConstants.defaultUUID)!
