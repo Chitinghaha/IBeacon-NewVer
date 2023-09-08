@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		149CC0182AA9BA1C0019A771 /* iBeaconSettingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CC0172AA9BA1C0019A771 /* iBeaconSettingConstant.swift */; };
+		149CC01A2AA9BB590019A771 /* iBeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CC0192AA9BB590019A771 /* iBeaconService.swift */; };
+		14BFEDCA2AAB0E47005DD6FB /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BFEDC92AAB0E47005DD6FB /* HomePageViewModel.swift */; };
 		14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */; };
 		14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */; };
 		14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */; };
@@ -17,7 +20,7 @@
 		14FD1C6B2AA1B76B0090E3CC /* VoiceOveriBeaconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C6A2AA1B76B0090E3CC /* VoiceOveriBeaconTests.swift */; };
 		14FD1C752AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */; };
 		14FD1C772AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */; };
-		14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */; };
+		14FD1C882AA1C2150090E3CC /* AccessibilityLabelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C872AA1C2150090E3CC /* AccessibilityLabelConstants.swift */; };
 		14FD1C8A2AA1C7B50090E3CC /* iBeaconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */; };
 		2A3E9C002AA3552D00A1C3F2 /* iBeaconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */; };
 		2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */; };
@@ -54,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		149CC0172AA9BA1C0019A771 /* iBeaconSettingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconSettingConstant.swift; sourceTree = "<group>"; };
+		149CC0192AA9BB590019A771 /* iBeaconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconService.swift; sourceTree = "<group>"; };
+		14BFEDC92AAB0E47005DD6FB /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		14FD1C4D2AA1B76A0090E3CC /* VoiceOveriBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceOveriBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +74,7 @@
 		14FD1C702AA1B76B0090E3CC /* VoiceOveriBeaconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceOveriBeaconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD1C742AA1B76B0090E3CC /* VoiceOveriBeaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITests.swift; sourceTree = "<group>"; };
 		14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
+		14FD1C872AA1C2150090E3CC /* AccessibilityLabelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLabelConstants.swift; sourceTree = "<group>"; };
 		14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconModel.swift; sourceTree = "<group>"; };
 		2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconViewModel.swift; sourceTree = "<group>"; };
 		2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizerService.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 			children = (
 				14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */,
 				14FD1C562AA1B76A0090E3CC /* Main.storyboard */,
+				14BFEDC92AAB0E47005DD6FB /* HomePageViewModel.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -200,7 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */,
-				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
+				14FD1C872AA1C2150090E3CC /* AccessibilityLabelConstants.swift */,
+				149CC0172AA9BA1C0019A771 /* iBeaconSettingConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */,
 				2A3E9C052AA362A000A1C3F2 /* AudioPlayerService.swift */,
 				2A3E9C062AA362A000A1C3F2 /* FileReadWriteService.swift */,
+				149CC0192AA9BB590019A771 /* iBeaconService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -398,9 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149CC0182AA9BA1C0019A771 /* iBeaconSettingConstant.swift in Sources */,
 				2A3E9C142AA367D300A1C3F2 /* SoundEffectConstant.swift in Sources */,
+				14BFEDCA2AAB0E47005DD6FB /* HomePageViewModel.swift in Sources */,
 				14FD1C5B2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld in Sources */,
-				14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */,
+				14FD1C882AA1C2150090E3CC /* AccessibilityLabelConstants.swift in Sources */,
 				14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */,
 				2A3E9C002AA3552D00A1C3F2 /* iBeaconViewModel.swift in Sources */,
 				14FD1C8A2AA1C7B50090E3CC /* iBeaconModel.swift in Sources */,
@@ -408,6 +419,7 @@
 				2A3E9C1A2AA36CF100A1C3F2 /* SoundSettingViewController.swift in Sources */,
 				2A3E9C092AA362A000A1C3F2 /* FileReadWriteService.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
+				149CC01A2AA9BB590019A771 /* iBeaconService.swift in Sources */,
 				2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */,
 				2A3E9C202AA3737400A1C3F2 /* UIView+Toast.swift in Sources */,
 				14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */,
@@ -587,13 +599,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceOveriBeacon/Info.plist;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
-				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -609,6 +620,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.bkchen.VoiceOveriBeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -620,13 +632,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceOveriBeacon/Info.plist;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
-				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -642,6 +653,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.bkchen.VoiceOveriBeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
