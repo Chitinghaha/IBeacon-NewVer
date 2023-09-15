@@ -3,16 +3,18 @@
         "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
         "major": 1,
         "minor": 1,
-        "description": "這是一個測試用的ibeacon說明",
-        "name": "麥當勞門口",
-        "rawType": 0
+        "description": "歡迎來到餐廳",
+        "name": "餐桌",
+        "rawType": 0,
+        "id": 1
     },
     {
         "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
         "major": 1,
         "minor": 2,
-        "description": "這也是一個測試用的ibeacon說明",
-        "name": "牆柱",
-        "rawType": 1
+        "description": "歡迎來到客廳",
+        "name": "電視桌",
+        "rawType": 1,
+        "id": 2
     }
 ]

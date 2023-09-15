@@ -4,7 +4,6 @@
 //
 //  Created by 陳邦亢 on 2023/9/1.
 //
-
 import Foundation
 import CoreLocation
 
@@ -21,8 +20,10 @@ struct iBeaconModel: Codable, Equatable {
     let name: String
     // 種類：0 = 正常, 1 = 障礙物
     let rawType: Int
+
+    let id: Int
     
-    var proximity: Int? = 0
+    var proximity: Int?
     
     var uuid: UUID { get {
         UUID(uuidString: self.uuidString) ?? UUID(uuidString: iBeaconConstants.defaultUUID)!
@@ -40,7 +41,3 @@ struct iBeaconModel: Codable, Equatable {
     }
 }
 
-struct iBeaconConstants {
-    static let defaultUUID = "fda50693-a4e2-4fb1-afcf-c6eb07647825"
-    
-}

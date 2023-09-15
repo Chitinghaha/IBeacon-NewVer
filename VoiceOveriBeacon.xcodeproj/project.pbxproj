@@ -19,6 +19,8 @@
 		14FD1C772AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */; };
 		14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */; };
 		14FD1C8A2AA1C7B50090E3CC /* iBeaconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */; };
+		2A1CCB2C2AB36168005B058D /* iBeaconConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CCB2B2AB36168005B058D /* iBeaconConstants.swift */; };
+		2A1CCB2E2AB36187005B058D /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CCB2D2AB36187005B058D /* AppSetting.swift */; };
 		2A3E9C002AA3552D00A1C3F2 /* iBeaconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */; };
 		2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */; };
 		2A3E9C082AA362A000A1C3F2 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E9C052AA362A000A1C3F2 /* AudioPlayerService.swift */; };
@@ -70,6 +72,8 @@
 		14FD1C762AA1B76B0090E3CC /* VoiceOveriBeaconUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOveriBeaconUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConstants.swift; sourceTree = "<group>"; };
 		14FD1C892AA1C7B50090E3CC /* iBeaconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconModel.swift; sourceTree = "<group>"; };
+		2A1CCB2B2AB36168005B058D /* iBeaconConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconConstants.swift; sourceTree = "<group>"; };
+		2A1CCB2D2AB36187005B058D /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		2A3E9BFF2AA3552D00A1C3F2 /* iBeaconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconViewModel.swift; sourceTree = "<group>"; };
 		2A3E9C042AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizerService.swift; sourceTree = "<group>"; };
 		2A3E9C052AA362A000A1C3F2 /* AudioPlayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */,
 				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
+				2A1CCB2B2AB36168005B058D /* iBeaconConstants.swift */,
+				2A1CCB2D2AB36187005B058D /* AppSetting.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -408,11 +414,13 @@
 				2A3E9C1A2AA36CF100A1C3F2 /* SoundSettingViewController.swift in Sources */,
 				2A3E9C092AA362A000A1C3F2 /* FileReadWriteService.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
+				2A1CCB2E2AB36187005B058D /* AppSetting.swift in Sources */,
 				2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */,
 				2A3E9C202AA3737400A1C3F2 /* UIView+Toast.swift in Sources */,
 				14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */,
 				2A3E9C082AA362A000A1C3F2 /* AudioPlayerService.swift in Sources */,
 				2A3E9C222AA3737400A1C3F2 /* UIColor+.swift in Sources */,
+				2A1CCB2C2AB36168005B058D /* iBeaconConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

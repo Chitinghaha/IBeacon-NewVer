@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import Combine
 
 class HomePageViewController: UIViewController {
 
@@ -25,52 +26,7 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var soundSettingButton: UIButton!
     
-    let locationManager = CLLocationManager()
-    var rangingiBeacons: [iBeaconModel] = []
-    var nearestiBeacon: iBeaconModel? = nil
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        self.setAccessibiluty()
-        
-        self.setupLocationManager()
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    func setupLocationManager() {
-        self.locationManager.delegate = self
-        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-            print("Beacon監控是可用的")
-            locationManager.requestAlwaysAuthorization()
-            
-            let ibeacons = iBeaconViewModel.shared.ibeacons
-            
-            ibeacons.forEach {
-                let region = CLBeaconRegion(beaconIdentityConstraint: CLBeaconIdentityConstraint(uuid: $0.uuid, major: CLBeaconMajorValue($0.major), minor: CLBeaconMinorValue($0.minor)), identifier: $0.uuidString)
-
-                self.locationManager.startMonitoring(for: region)
-            }
-        }else {
-            print("Beacon監控不可用")
-        }
-    }
-
-    func setAccessibiluty() {
-        self.nearestAreaButton.accessibilityLabel = AccessibilityConstants.NearestAreaButton
-        self.nearestAreaButton.accessibilityHint = nil
-        
-        self.nearbyAreaButton.accessibilityLabel = AccessibilityConstants.NearbyAreaButton
-        self.nearbyAreaButton.accessibilityHint = nil
-
-        self.soundSettingButton.accessibilityLabel = AccessibilityConstants.SoundSettingButton
-        self.soundSettingButton.accessibilityHint = nil
-
-    }
-
     @IBAction func onclickNearestAreaButton(_ sender: Any) {
         print("onclickNearestAreaButton")
         
@@ -118,7 +74,90 @@ class HomePageViewController: UIViewController {
 //
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // MARK: Member var
+    let locationManager = CLLocationManager()
+    var rangingiBeacons: [iBeaconModel] = []
+    
+    var nearestiBeaconFilterContainer: [Int] = []
+    
+    @Published var nearestiBeacon: iBeaconModel? = nil
+    
+    var speechWhenClosing = PassthroughSubject<String, Never>()
+    var isDistanceImmediately = PassthroughSubject<Bool, Never>()
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        self.setAccessibiluty()
+        
+        self.setupBinding()
+//        self.testBinding()
+        self.setupLocationManager()
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+        
+    func testBinding() {
+        let speechTimer = Timer.publish(every: 1.0, on: .main, in: .common)
+            .autoconnect()
+            .map { _ in "測試靠近某物" }
+            
+        speechTimer
+            .print("speechTimer")
+            .sink { string in
+                self.speechWhenClosing.send(string)
+            }
+            .store(in: &cancellable)
+        
+        Timer.publish(every: 2.3, on: .current, in: .common)
+            .autoconnect()
+            .map { _ in Bool.random() }
+            .sink {
+                self.isDistanceImmediately.send($0)
+            }
+            .store(in: &cancellable)
+        
+    }
+    
+    func setupLocationManager() {
+        self.locationManager.delegate = self
+        
+        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+            print("Beacon監控是可用的")
+            locationManager.requestAlwaysAuthorization()
+            
+            let ibeacons = iBeaconViewModel.shared.ibeacons
+            
+            
+            ibeacons.forEach {
+                let constraint = CLBeaconIdentityConstraint(uuid: $0.uuid)
+                
+                if (!self.locationManager.rangedBeaconConstraints.contains(constraint)) {
+                    self.locationManager.startRangingBeacons(satisfying: constraint)
+                }
+            }
+        }else {
+            print("Beacon監控不可用")
+        }
+    }
 
+    func setAccessibiluty() {
+        self.testLabel.isAccessibilityElement = false
+        
+        self.nearestAreaButton.accessibilityLabel = AccessibilityConstants.NearestAreaButton
+        self.nearestAreaButton.accessibilityHint = nil
+        
+        self.nearbyAreaButton.accessibilityLabel = AccessibilityConstants.NearbyAreaButton
+        self.nearbyAreaButton.accessibilityHint = nil
+
+        self.soundSettingButton.accessibilityLabel = AccessibilityConstants.SoundSettingButton
+        self.soundSettingButton.accessibilityHint = nil
+
+    }
     
 }
 
@@ -134,24 +173,32 @@ extension HomePageViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         guard region is CLBeaconRegion else { return }
         let region = region as! CLBeaconRegion
-        let constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
+        var constraint: CLBeaconIdentityConstraint
+        
+        constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
+//        let constraint = CLBeaconIdentityConstraint(uuid: region.uuid, major: CLBeaconMajorValue(region.major), minor: CLBeaconMinorValue(region.minor))
         
         AudioPlayerService.shared.playSound(name: SoundEffectConstant.start)
-        // 在這裡做一些進入 region 的處理，例如提供一些提示
         guard CLLocationManager.isRangingAvailable() else { return }
-        // 既然進入 region 了，那就偵測跟裝置的距離
-        manager.startRangingBeacons(satisfying: constraint)
+        print("進入範圍，開始監測距離：\(constraint)")
+        if (!manager.rangedBeaconConstraints.contains(constraint)) {
+            manager.startRangingBeacons(satisfying: constraint)
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        guard region is CLBeaconRegion else { return }
-        let region = region as! CLBeaconRegion
-        let constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
-        print("didExitRegion:\(region)")
-        // 在這裡做一些離開 region 的處理，例如提供一些提示
-        guard CLLocationManager.isRangingAvailable() else { return }
-        // 既然離開 region 了，那就停止偵測跟裝置的距離
-        manager.stopRangingBeacons(satisfying: constraint)
+//        guard region is CLBeaconRegion,
+//        let region = region as? CLBeaconRegion,
+//        let major = region.major,
+//        let minor = region.minor
+//        else { return }
+//
+//        let constraint = CLBeaconIdentityConstraint(uuid: region.uuid, major: CLBeaconMajorValue(truncating: major), minor: CLBeaconMinorValue(truncating: minor))
+//        print("離開範圍，解除監測距離:\(region)")
+//
+//        guard CLLocationManager.isRangingAvailable() else { return }
+//
+//        manager.stopRangingBeacons(satisfying: constraint)
     }
 
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
@@ -163,17 +210,35 @@ extension HomePageViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
         guard region is CLBeaconRegion else { return }
         let region = region as! CLBeaconRegion
-        let constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
+        var constraint: CLBeaconIdentityConstraint
+        guard CLLocationManager.isRangingAvailable() else { return }
 
+        print("state of region:\(region) = \(state)")
+        constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
         if state == .inside { // 在範圍內
-            if CLLocationManager.isRangingAvailable() {
+            if (!manager.rangedBeaconConstraints.contains(constraint)) {
                 manager.startRangingBeacons(satisfying: constraint)
             }
-        } else if state == .outside { // 在範圍外
-            if CLLocationManager.isRangingAvailable() {
-                manager.stopRangingBeacons(satisfying: constraint)
-            }
         }
+//
+//        if let major = region.major,
+//           let minor = region.minor {
+//            constraint = CLBeaconIdentityConstraint(uuid: region.uuid, major: CLBeaconMajorValue(truncating: major), minor: CLBeaconMinorValue(truncating: minor))
+//            print("開始監控範圍 startRangingBeacons, constraint=\(constraint)")
+//            if state == .inside { // 在範圍內
+//                manager.startRangingBeacons(satisfying: constraint)
+//            } else if state == .outside { // 在範圍外
+//                manager.stopRangingBeacons(satisfying: constraint)
+//            }
+//
+//        }
+//        else {
+//            constraint = CLBeaconIdentityConstraint(uuid: region.uuid)
+//            if state == .inside { // 在範圍內
+//                manager.startRangingBeacons(satisfying: constraint)
+//
+//            }
+//        }
     }
 
     func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
@@ -182,45 +247,102 @@ extension HomePageViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         // beacons 是一個 array，裡頭的 beacon 由近到遠排序
-        print("偵測到的beacons:\(beacons)")
-        if (beacons.count > 0) {
-            self.testLabel.text = String(describing: beacons)
+        self.rangingiBeacons = beacons.compactMap {
+            iBeaconViewModel.shared.transformToiBeaconModel(from: $0)
+        }
+        
+        print("beacons:")
+        beacons.forEach {
+            print($0)
+        }
+        
+        // 取出最近且不是-1m的ibeacon id 存入filter pool中
+        if let clBeacon = beacons.first(where: { $0.accuracy > 0 }),
+            let ibeacon = iBeaconViewModel.shared.transformToiBeaconModel(from: clBeacon) {
+            self.nearestiBeaconFilterContainer.append(ibeacon.id)
         }
         else {
-            self.testLabel.text = "搜尋中"
+            self.nearestiBeaconFilterContainer.append(-1)
         }
         
-        var i = 0
         
-        while (i < self.rangingiBeacons.count) {
-            if (!beacons.contains(where: { iBeaconViewModel.shared.transformToiBeaconModel(from: $0) == self.rangingiBeacons[i] })) {
-                self.rangingiBeacons.remove(at: i)
-                i -= 1
-            }
-            i += 1
+        if (self.nearestiBeaconFilterContainer.count > AppSetting.nearestFilterNum) {
+            self.nearestiBeaconFilterContainer.removeFirst()
         }
+        
+        if (self.nearestiBeaconFilterContainer.last! != -1 &&
+            self.nearestiBeaconFilterContainer.first! != self.nearestiBeaconFilterContainer.last! &&
+            self.nearestiBeaconFilterContainer.count > 2) {
+            self.nearestiBeaconFilterContainer.removeFirst(2)
+        }
+        
 
-        beacons.forEach { beacon in
-            guard let ibeacon = iBeaconViewModel.shared.transformToiBeaconModel(from: beacon)
-            else { return }
-            if (!self.rangingiBeacons.contains(where: { $0 == ibeacon })) {
-                self.rangingiBeacons.append(ibeacon)
+        if (self.nearestiBeaconFilterContainer.count > AppSetting.nearestFilterNum / 3) {
+            let idFrequency = self.nearestiBeaconFilterContainer.reduce(into: [:]) {
+                counts, id in
+                counts[id, default: 0] += 1
             }
-            else {
-                if (beacon.accuracy <= 0) {
-                    self.rangingiBeacons.removeAll(where: { $0 == ibeacon })
+            print("pool =\(idFrequency)")
+            if let nearestiBeaconID = idFrequency.max(by: { $0.value < $1.value })?.key {
+                if (nearestiBeaconID == -1) {
+                    self.nearestiBeacon = nil
+                }
+                else {
+                    self.nearestiBeacon = self.rangingiBeacons.first{ $0.id == nearestiBeaconID }
                 }
             }
         }
-        
-        if let beacon = beacons.first(where: { beacon in
-            beacon.accuracy > 0
-        }) {
-            // 取得距離最近的 beacon 了，作些事情吧
-            self.nearestiBeacon = iBeaconViewModel.shared.transformToiBeaconModel(from: beacon)
-        }
-        
-        print("程式處理中的beacons:\(self.rangingiBeacons)")
-        print("程式處理中最近的beacons:\(String(describing: self.nearestiBeacon))")
     }
+}
+
+extension HomePageViewController {
+    func setupBinding() {
+        self.$nearestiBeacon
+            .receive(on: RunLoop.main)
+            .sink { beacon in
+//                print("nearestiBeacon received: \(beacon)")
+                if let beacon = beacon {
+
+                    self.testLabel.text = "最近的物體:\(beacon.name)\n\(beacon.description)\n"
+                    
+                    // 加上距離的publish,去過濾掉已經遠離原本目標的情況
+                    if (beacon.proximity == 1) {
+                        self.speechWhenClosing.send("\(beacon.name)，\(beacon.description)")
+                        self.isDistanceImmediately.send(true)
+                    }
+                    else {
+                        self.isDistanceImmediately.send(false)
+                    }
+                    
+                    switch beacon.proximity {
+                    case 1:
+                        self.testLabel.text! += "距離極近"
+                    case 2:
+                        self.testLabel.text! += "距離中等"
+                    case 3:
+                        self.testLabel.text! += "距離遠"
+                    default:
+                        self.testLabel.text! += "距離未知"
+                    }
+                }
+                else {
+                    self.testLabel.text = "搜尋中..."
+                }
+            }
+            .store(in: &self.cancellable)
+        
+        self.speechWhenClosing.combineLatest(self.isDistanceImmediately)
+            .filter { $0.0.count != 0 }
+            .throttle(for: .seconds(AppSetting.speechInterval), scheduler: RunLoop.main, latest: true)
+            .print("speechWhenClosing throttle")
+            .sink { content, isDistanceImmediately in
+                if (isDistanceImmediately) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        UIAccessibility.post(notification: .announcement, argument: content)
+                    }
+                }
+            }
+            .store(in: &cancellable)
+    }
+
 }

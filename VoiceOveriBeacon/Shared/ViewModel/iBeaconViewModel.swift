@@ -25,32 +25,45 @@ class iBeaconViewModel {
             let ibeacon = self.ibeacons[i]
             if (ibeacon.uuidString.lowercased() == clbeacon.uuid.uuidString.lowercased() && NSNumber(integerLiteral: ibeacon.major) == clbeacon.major && NSNumber(integerLiteral: ibeacon.minor) == clbeacon.minor) {
                 res = ibeacon
+                if (7 >= clbeacon.accuracy && clbeacon.accuracy > 0) {
+                    res!.proximity = 1
+                }
+                else if (15 >= clbeacon.accuracy && clbeacon.accuracy > 7) {
+                    res!.proximity = 2
+                }
+                else if (50 >= clbeacon.accuracy && clbeacon.accuracy > 15) {
+                    res!.proximity = 3
+                }
+                else {
+                    res!.proximity = 0
+                }
+                
                 break
             }
         }
 
         return res
     }
-    
-    func setFakeiBeacons() {
-        self.ibeacons = [
-            iBeaconModel(
-                uuidString: "fda50693-a4e2-4fb1-afcf-c6eb07647825",
-                major: 1,
-                minor: 1,
-                description: "這是一個測試用的ibeacon說明",
-                name: "麥當勞門口",
-                rawType: 0
-            ),
-            iBeaconModel(
-                uuidString: "fda50693-a4e2-4fb1-afcf-c6eb07647825",
-                major: 1,
-                minor: 2,
-                description: "這也是一個測試用的ibeacon說明",
-                name: "牆柱",
-                rawType: 1
-            )
-        ]
-    }
+//    
+//    func setFakeiBeacons() {
+//        self.ibeacons = [
+//            iBeaconModel(
+//                uuidString: "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+//                major: 1,
+//                minor: 1,
+//                description: "這是一個測試用的ibeacon說明",
+//                name: "麥當勞門口",
+//                rawType: 0
+//            ),
+//            iBeaconModel(
+//                uuidString: "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+//                major: 1,
+//                minor: 2,
+//                description: "這也是一個測試用的ibeacon說明",
+//                name: "牆柱",
+//                rawType: 1
+//            )
+//        ]
+//    }
     
 }
