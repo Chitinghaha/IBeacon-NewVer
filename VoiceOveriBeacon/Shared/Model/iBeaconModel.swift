@@ -23,6 +23,11 @@ struct iBeaconModel: Codable, Equatable {
 
     let id: Int
     
+    
+    /// unknown = 0
+    /// immediate = 1
+    /// near = 2
+    /// far = 3
     var proximity: Int?
     
     var uuid: UUID { get {

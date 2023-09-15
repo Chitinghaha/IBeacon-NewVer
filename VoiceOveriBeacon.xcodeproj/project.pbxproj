@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146081E62AB4272000CAD2BC /* iBeaconDistanceDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146081E52AB4272000CAD2BC /* iBeaconDistanceDefinition.swift */; };
 		14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */; };
 		14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */; };
 		14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		146081E52AB4272000CAD2BC /* iBeaconDistanceDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconDistanceDefinition.swift; sourceTree = "<group>"; };
 		14FD1C4D2AA1B76A0090E3CC /* VoiceOveriBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceOveriBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
 				2A1CCB2B2AB36168005B058D /* iBeaconConstants.swift */,
 				2A1CCB2D2AB36187005B058D /* AppSetting.swift */,
+				146081E52AB4272000CAD2BC /* iBeaconDistanceDefinition.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				2A3E9C212AA3737400A1C3F2 /* UIView+Nib.swift in Sources */,
 				2A3E9C1A2AA36CF100A1C3F2 /* SoundSettingViewController.swift in Sources */,
 				2A3E9C092AA362A000A1C3F2 /* FileReadWriteService.swift in Sources */,
+				146081E62AB4272000CAD2BC /* iBeaconDistanceDefinition.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
 				2A1CCB2E2AB36187005B058D /* AppSetting.swift in Sources */,
 				2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */,

@@ -7,12 +7,17 @@
 
 import AVFoundation
 import UIKit
+import Combine
 
 class AudioPlayerService {
     
     static let shared = AudioPlayerService()
     
     private var audioPlayer: AVAudioPlayer?
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    private let playContent = PassthroughSubject<String, Never>()
     
     init() {
         do {
@@ -21,6 +26,41 @@ class AudioPlayerService {
         } catch {
             print("Failed to set audio session category: \(error)")
         }
+        
+        self.playContent
+            .removeDuplicates()
+            .sink { name in
+                self.audioPlayer?.stop()
+                
+                if (name.count == 0) { return }
+                
+                if let soundURL = Bundle.main.url(forResource: name, withExtension: "mp3") {
+                    do {
+                        self.audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+                        self.audioPlayer?.numberOfLoops = -1
+                        self.audioPlayer?.play()
+                        print("Audio file found. Playing the sound.")
+                    } catch {
+                        print("Error in AVAudioPlayer: \(error)")
+                    }
+                }
+                else {
+                    guard let audioData = NSDataAsset(name: name)?.data else {
+                        print("Error: sound file with name \(name) not found")
+                        return
+                    }
+                    
+                    do {
+                        self.audioPlayer = try AVAudioPlayer(data: audioData)
+                        self.audioPlayer?.numberOfLoops = -1
+                        self.audioPlayer?.play()
+                        print("Audio file found. Playing the sound.")
+                    } catch {
+                        print("Error in AVAudioPlayer: \(error.localizedDescription)")
+                    }
+                }
+            }
+            .store(in: &cancellable)
     }
     
     func playSound(name: String) {
@@ -51,37 +91,38 @@ class AudioPlayerService {
     }
     
     func playLoopSound(name: String) {
-        self.audioPlayer?.stop()
-        
-        if let soundURL = Bundle.main.url(forResource: name, withExtension: "mp3") {
-            do {
-                self.audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
-                self.audioPlayer?.numberOfLoops = -1
-                self.audioPlayer?.play()
-                print("Audio file found. Playing the sound.")
-            } catch {
-                print("Error in AVAudioPlayer: \(error)")
-            }
-        }
-        else {
-            guard let audioData = NSDataAsset(name: name)?.data else {
-                print("Error: sound file with name \(name) not found")
-                return
-            }
-            
-            do {
-                self.audioPlayer = try AVAudioPlayer(data: audioData)
-                self.audioPlayer?.numberOfLoops = -1
-                self.audioPlayer?.play()
-                print("Audio file found. Playing the sound.")
-            } catch {
-                print("Error in AVAudioPlayer: \(error.localizedDescription)")
-            }
-        }
+        self.playContent.send(name)
+//        self.audioPlayer?.stop()
+//
+//        if let soundURL = Bundle.main.url(forResource: name, withExtension: "mp3") {
+//            do {
+//                self.audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+//                self.audioPlayer?.numberOfLoops = -1
+//                self.audioPlayer?.play()
+//                print("Audio file found. Playing the sound.")
+//            } catch {
+//                print("Error in AVAudioPlayer: \(error)")
+//            }
+//        }
+//        else {
+//            guard let audioData = NSDataAsset(name: name)?.data else {
+//                print("Error: sound file with name \(name) not found")
+//                return
+//            }
+//
+//            do {
+//                self.audioPlayer = try AVAudioPlayer(data: audioData)
+//                self.audioPlayer?.numberOfLoops = -1
+//                self.audioPlayer?.play()
+//                print("Audio file found. Playing the sound.")
+//            } catch {
+//                print("Error in AVAudioPlayer: \(error.localizedDescription)")
+//            }
+//        }
     }
     
     func stopSound() {
-        self.audioPlayer?.stop()
+        self.playContent.send("")
         print("Audio player stopped.")
     }
     

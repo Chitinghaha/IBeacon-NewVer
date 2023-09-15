@@ -317,12 +317,16 @@ extension HomePageViewController {
                     switch beacon.proximity {
                     case 1:
                         self.testLabel.text! += "距離極近"
+                        AudioPlayerService.shared.playLoopSound(name: SoundEffectConstant.beaconImmediately)
                     case 2:
                         self.testLabel.text! += "距離中等"
+                        AudioPlayerService.shared.playLoopSound(name: SoundEffectConstant.beaconNear)
                     case 3:
                         self.testLabel.text! += "距離遠"
+                        AudioPlayerService.shared.stopSound()
                     default:
                         self.testLabel.text! += "距離未知"
+                        AudioPlayerService.shared.stopSound()
                     }
                 }
                 else {
