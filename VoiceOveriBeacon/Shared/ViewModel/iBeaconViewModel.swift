@@ -25,7 +25,10 @@ class iBeaconViewModel {
             let ibeacon = self.ibeacons[i]
             if (ibeacon.uuidString.lowercased() == clbeacon.uuid.uuidString.lowercased() && NSNumber(integerLiteral: ibeacon.major) == clbeacon.major && NSNumber(integerLiteral: ibeacon.minor) == clbeacon.minor) {
                 res = ibeacon
-                res?.proximity = iBeaconProximityDefinition.getProximity(distance: clbeacon.accuracy, table: iBeaconProximityDefinition.proximityTable)
+                let newProximity = iBeaconProximityDefinition.getProximity(distance: clbeacon.accuracy, table: iBeaconProximityDefinition.proximityTable)
+                if (res!.proximity == nil || newProximity != 0) {
+                    res!.proximity = newProximity
+                }
                 
                 break
             }

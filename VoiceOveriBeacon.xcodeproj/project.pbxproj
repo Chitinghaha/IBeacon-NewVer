@@ -205,11 +205,11 @@
 		14FD1C862AA1C2010090E3CC /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */,
 				14FD1C872AA1C2150090E3CC /* AccessibilityConstants.swift */,
-				2A1CCB2B2AB36168005B058D /* iBeaconConstants.swift */,
 				2A1CCB2D2AB36187005B058D /* AppSetting.swift */,
+				2A1CCB2B2AB36168005B058D /* iBeaconConstants.swift */,
 				146081E52AB4272000CAD2BC /* iBeaconDistanceDefinition.swift */,
+				2A3E9C132AA367D300A1C3F2 /* SoundEffectConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";

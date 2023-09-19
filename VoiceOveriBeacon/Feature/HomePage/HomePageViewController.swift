@@ -11,6 +11,7 @@ import Combine
 
 class HomePageViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var testLabel: UILabel!
     
     @IBOutlet weak var nearestAreaView: UIView!
@@ -92,32 +93,43 @@ class HomePageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.setAccessibiluty()
+        self.setupAccessibility()
         
         self.setupBinding()
-//        self.testBinding()
+        
+//        self.testiBeaconBinding()
         self.setupLocationManager()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
         
-    func testBinding() {
-        let speechTimer = Timer.publish(every: 1.0, on: .main, in: .common)
-            .autoconnect()
-            .map { _ in "測試靠近某物" }
+    func testiBeaconBinding() {
+//        let speechTimer = Timer.publish(every: 1.0, on: .main, in: .common)
+//            .autoconnect()
+//            .map { _ in "測試靠近某物" }
             
-        speechTimer
-            .print("speechTimer")
-            .sink { string in
-                self.speechWhenClosing.send(string)
-            }
-            .store(in: &cancellable)
+//        speechTimer
+//            .print("speechTimer")
+//            .sink { string in
+//                self.speechWhenClosing.send(string)
+//            }
+//            .store(in: &cancellable)
         
         Timer.publish(every: 2.3, on: .current, in: .common)
             .autoconnect()
             .map { _ in Bool.random() }
             .sink {
                 self.isDistanceImmediately.send($0)
+            }
+            .store(in: &cancellable)
+        
+        Timer.publish(every: 2.5, on: .current, in: .common)
+            .autoconnect()
+            .sink { _ in
+                if var ibeacon = iBeaconViewModel.shared.ibeacons.randomElement() {
+                    ibeacon.proximity = [1,2,3].randomElement()!
+                    self.nearestiBeacon = ibeacon
+                }
             }
             .store(in: &cancellable)
         
@@ -145,8 +157,8 @@ class HomePageViewController: UIViewController {
         }
     }
 
-    func setAccessibiluty() {
-        self.testLabel.isAccessibilityElement = false
+    func setupAccessibility() {
+//        self.testLabel.isAccessibilityElement = false
         
         self.nearestAreaButton.accessibilityLabel = AccessibilityConstants.NearestAreaButton
         self.nearestAreaButton.accessibilityHint = nil
@@ -247,6 +259,12 @@ extension HomePageViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         // beacons 是一個 array，裡頭的 beacon 由近到遠排序
+        
+        self.updateBeaconInfos(with: beacons)
+        
+    }
+    
+    func updateBeaconInfos(with beacons: [CLBeacon]) {
         self.rangingiBeacons = beacons.compactMap {
             iBeaconViewModel.shared.transformToiBeaconModel(from: $0)
         }
@@ -304,7 +322,7 @@ extension HomePageViewController {
                 if let beacon = beacon {
 
                     self.testLabel.text = "最近的物體:\(beacon.name)\n\(beacon.description)\n"
-                    
+//                    self.testLabel.accessibilityLabel = self.testLabel.text
                     // 加上距離的publish,去過濾掉已經遠離原本目標的情況
                     if (beacon.proximity == 1) {
                         self.speechWhenClosing.send("\(beacon.name)，\(beacon.description)")
@@ -326,7 +344,7 @@ extension HomePageViewController {
                         AudioPlayerService.shared.stopSound()
                     default:
                         self.testLabel.text! += "距離未知"
-                        AudioPlayerService.shared.stopSound()
+//                        AudioPlayerService.shared.stopSound()
                     }
                 }
                 else {
