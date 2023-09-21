@@ -3,18 +3,93 @@
         "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
         "major": 1,
         "minor": 1,
-        "description": "歡迎來到餐廳",
-        "name": "餐桌",
-        "rawType": 0,
-        "id": 1
+        "description": "台達館一樓，右方有通往地下一樓的樓梯，左方有牆壁，請沿著牆壁向前走至牆壁盡頭",
+        "name": "入口",
+        "rawType": 1,
+        "id":1
     },
     {
         "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
         "major": 1,
         "minor": 2,
-        "description": "歡迎來到客廳",
-        "name": "電視桌",
+        "description": "向左轉，並沿著牆面行走至牆面盡頭，注意前方辦理活動，有桌椅等障礙物",
+        "name": "轉彎處",
         "rawType": 1,
-        "id": 2
+        "id":2
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 3,
+        "description": "向前三至五步，抵達另一個牆面，並向右轉，繼續沿著牆壁直行",
+        "name": "轉彎處",
+        "rawType": 1,
+        "id":3
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 4,
+        "description": "此出需右轉，請向右轉，並向前三至五步，左方有一個牆面，請沿著牆壁直行",
+        "name": "轉彎處",
+        "rawType": 1,
+        "id":4
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 5,
+        "description": "前方為一個窄門，請通過門口，並向前三至五步，抵達另一個牆面後右轉",
+        "name": "轉彎處",
+        "rawType": 1,
+        "id":5
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 6,
+        "description": "第一個門為男廁，第二個門為無障礙廁所，第三個門為女廁，女廁旁有飲水機",
+        "name": "休息區",
+        "rawType": 1,
+        "id":6,
+        "canBeDestination": true
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 7,
+        "description": "通往二樓與地下一樓",
+        "name": "樓梯",
+        "rawType": 1,
+        "id":7,
+        "canBeDestination": true
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 8,
+        "description": "注意，前方辦理活動，小心障礙物",
+        "name": "障礙物",
+        "rawType": 1,
+        "id":8
+    },
+    {
+        "uuidString": "fda50693-a4e2-4fb1-afcf-c6eb07647825",
+        "major": 1,
+        "minor": 9,
+        "description": "這裡可以通往休息區和樓梯",
+        "name": "岔路",
+        "rawType": 1,
+        "id":9,
+        "intersectionInfo": [
+            {
+                "nodeID": 6,
+                "description": "前往休息區的話應該要如此這般..."
+            },
+            {
+                "nodeID": 7,
+                "description": "前往樓梯的話應該要如此這般..."
+            },
+        ]
     }
 ]

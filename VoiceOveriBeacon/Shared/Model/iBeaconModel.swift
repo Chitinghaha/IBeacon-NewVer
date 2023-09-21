@@ -20,10 +20,12 @@ struct iBeaconModel: Codable, Equatable {
     let name: String
     // 種類：0 = 正常, 1 = 障礙物
     let rawType: Int
-
+    // an unique ID
     let id: Int
     
+    let canBeDestination: Bool?
     
+    let intersectionInfo: [iBeaconEdge]?
     /// unknown = 0
     /// immediate = 1
     /// near = 2
@@ -46,3 +48,7 @@ struct iBeaconModel: Codable, Equatable {
     }
 }
 
+struct iBeaconEdge: Codable {
+    let nodeID: Int
+    let description: String
+}

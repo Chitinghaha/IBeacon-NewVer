@@ -135,18 +135,18 @@ extension HomePageViewController {
             }
             .store(in: &self.cancellable)
         
-        self.viewModel.speechWhenClosing.combineLatest(self.viewModel.isDistanceImmediately)
-            .filter { $0.0.count != 0 }
-            .throttle(for: .seconds(AppSetting.speechInterval), scheduler: RunLoop.main, latest: true)
-            .print("speechWhenClosing throttle")
-            .sink { content, isDistanceImmediately in
-                if (isDistanceImmediately) {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        UIAccessibility.post(notification: .announcement, argument: content)
-                    }
-                }
-            }
-            .store(in: &cancellable)
+//        self.viewModel.speechWhenClosing.combineLatest(self.viewModel.isDistanceImmediately)
+//            .filter { $0.0.count != 0 }
+//            .throttle(for: .seconds(AppSetting.speechInterval), scheduler: RunLoop.main, latest: true)
+//            .print("speechWhenClosing throttle")
+//            .sink { content, isDistanceImmediately in
+//                if (isDistanceImmediately) {
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                        UIAccessibility.post(notification: .announcement, argument: content)
+//                    }
+//                }
+//            }
+//            .store(in: &cancellable)
     }
 
 }

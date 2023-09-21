@@ -11,8 +11,12 @@ import Combine
 
 class iBeaconViewModel: NSObject {
     
+    static let shared = iBeaconViewModel()
+    
     private var cancellable = Set<AnyCancellable>()
     private let locationManager = CLLocationManager()
+    
+    var coordinator: AppMainCoordinator? = nil
     
     var predefinediBeacons: [iBeaconModel] = []
     
@@ -20,19 +24,14 @@ class iBeaconViewModel: NSObject {
     var nearestiBeaconFilterContainer: [Int] = []
     
     @Published var nearestiBeacon: iBeaconModel? = nil
-    
-    var speechWhenClosing = PassthroughSubject<String, Never>()
-    var isDistanceImmediately = PassthroughSubject<Bool, Never>()
-
+        
     override init () {
         super.init()
         self.predefinediBeacons = FileReadWriteService.shared.getAlliBeaconInfomation()
 //        self.setFakeiBeacons()
         
-        //        self.testiBeaconBinding()
+//        self.testiBeaconBinding()
         self.setupLocationManager()
-
-
     }
     
     func updateBeaconInfos(with beacons: [CLBeacon]) {
@@ -76,17 +75,6 @@ class iBeaconViewModel: NSObject {
                nearestiBeaconID != -1 {
 
                 self.nearestiBeacon = self.rangingiBeacons.first{ $0.id == nearestiBeaconID }
-                
-                // 加上距離的publish,去過濾掉已經遠離原本目標的情況
-                if let beacon = self.nearestiBeacon,
-                   beacon.proximity == 1 {
-                    self.speechWhenClosing.send("\(beacon.name)，\(beacon.description)")
-                    self.isDistanceImmediately.send(true)
-                }
-                else {
-                    self.isDistanceImmediately.send(false)
-                }
-            
             }
             else {
                 self.nearestiBeacon = nil
@@ -111,6 +99,21 @@ class iBeaconViewModel: NSObject {
         }
 
         return res
+    }
+    
+    func updateCurrentDestination(with name: String) {
+        if let ibeacon = self.predefinediBeacons.first(where: { $0.name == name }) {
+            
+            self.coordinator?.gotoPathNavigatingPage(with: ibeacon)
+        }
+    }
+    
+    func cancelNavigating() {
+        self.coordinator?.gotoEntryPointSearchingPage()
+    }
+    
+    func finishNavigating() {
+        self.coordinator?.gotoEntryPointSearchingPage()
     }
 //    
 //    func setFakeiBeacons() {
@@ -149,23 +152,23 @@ extension iBeaconViewModel {
 //            }
 //            .store(in: &cancellable)
         
-        Timer.publish(every: 2.3, on: .current, in: .common)
-            .autoconnect()
-            .map { _ in Bool.random() }
-            .sink {
-                self.isDistanceImmediately.send($0)
-            }
-            .store(in: &cancellable)
+//        Timer.publish(every: 2.3, on: .current, in: .common)
+//            .autoconnect()
+//            .map { _ in Bool.random() }
+//            .sink {
+//                self.isDistanceImmediately.send($0)
+//            }
+//            .store(in: &cancellable)
         
-        Timer.publish(every: 2.5, on: .current, in: .common)
-            .autoconnect()
-            .sink { _ in
-                if var ibeacon = self.predefinediBeacons.randomElement() {
-                    ibeacon.proximity = [1,2,3].randomElement()!
-                    self.nearestiBeacon = ibeacon
-                }
-            }
-            .store(in: &cancellable)
+//        Timer.publish(every: 2.5, on: .current, in: .common)
+//            .autoconnect()
+//            .sink { _ in
+//                if var ibeacon = self.predefinediBeacons.first {
+//                    ibeacon.proximity = [1,2,3].randomElement()!
+//                    self.nearestiBeacon = ibeacon
+//                }
+//            }
+//            .store(in: &cancellable)
         
     }
 

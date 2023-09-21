@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		146081E62AB4272000CAD2BC /* iBeaconDistanceDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146081E52AB4272000CAD2BC /* iBeaconDistanceDefinition.swift */; };
+		147927B02AB98B1400D8AB30 /* FilterSearchPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927A52AB98B1400D8AB30 /* FilterSearchPickerConfiguration.swift */; };
+		147927B12AB98B1400D8AB30 /* UIView+Subvie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927A72AB98B1400D8AB30 /* UIView+Subvie.swift */; };
+		147927B22AB98B1400D8AB30 /* UIStackView+ArrangedSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927A82AB98B1400D8AB30 /* UIStackView+ArrangedSubview.swift */; };
+		147927B32AB98B1400D8AB30 /* FSPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927AA2AB98B1400D8AB30 /* FSPTableViewCell.swift */; };
+		147927B42AB98B1400D8AB30 /* FSPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147927AB2AB98B1400D8AB30 /* FSPTableViewCell.xib */; };
+		147927B52AB98B1400D8AB30 /* FSPCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927AC2AB98B1400D8AB30 /* FSPCellViewModel.swift */; };
+		147927B62AB98B1400D8AB30 /* FilterSearchPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927AD2AB98B1400D8AB30 /* FilterSearchPicker.swift */; };
+		147927B72AB98B1400D8AB30 /* FilterSearchPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927AE2AB98B1400D8AB30 /* FilterSearchPickerViewModel.swift */; };
+		147927B82AB98B1400D8AB30 /* FilterSearchPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927AF2AB98B1400D8AB30 /* FilterSearchPickerViewController.swift */; };
+		14C032612AB96E1C00615353 /* EntryPointSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0325F2AB96E1C00615353 /* EntryPointSearchViewController.swift */; };
+		14C032622AB96E1C00615353 /* EntryPointSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C032602AB96E1C00615353 /* EntryPointSearchViewController.xib */; };
+		14C032652AB96E3E00615353 /* PathNavigatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C032632AB96E3E00615353 /* PathNavigatingViewController.swift */; };
+		14C032662AB96E3E00615353 /* PathNavigatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C032642AB96E3E00615353 /* PathNavigatingViewController.xib */; };
+		14C032692AB97C9200615353 /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C032682AB97C9200615353 /* AppMainCoordinator.swift */; };
 		14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */; };
 		14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */; };
 		14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD1C542AA1B76A0090E3CC /* HomePageViewController.swift */; };
@@ -58,6 +72,20 @@
 
 /* Begin PBXFileReference section */
 		146081E52AB4272000CAD2BC /* iBeaconDistanceDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconDistanceDefinition.swift; sourceTree = "<group>"; };
+		147927A52AB98B1400D8AB30 /* FilterSearchPickerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSearchPickerConfiguration.swift; sourceTree = "<group>"; };
+		147927A72AB98B1400D8AB30 /* UIView+Subvie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subvie.swift"; sourceTree = "<group>"; };
+		147927A82AB98B1400D8AB30 /* UIStackView+ArrangedSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+ArrangedSubview.swift"; sourceTree = "<group>"; };
+		147927AA2AB98B1400D8AB30 /* FSPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPTableViewCell.swift; sourceTree = "<group>"; };
+		147927AB2AB98B1400D8AB30 /* FSPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSPTableViewCell.xib; sourceTree = "<group>"; };
+		147927AC2AB98B1400D8AB30 /* FSPCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPCellViewModel.swift; sourceTree = "<group>"; };
+		147927AD2AB98B1400D8AB30 /* FilterSearchPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSearchPicker.swift; sourceTree = "<group>"; };
+		147927AE2AB98B1400D8AB30 /* FilterSearchPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSearchPickerViewModel.swift; sourceTree = "<group>"; };
+		147927AF2AB98B1400D8AB30 /* FilterSearchPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSearchPickerViewController.swift; sourceTree = "<group>"; };
+		14C0325F2AB96E1C00615353 /* EntryPointSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryPointSearchViewController.swift; path = "VoiceOveriBeacon/Feature/路徑規劃/尋找入口/EntryPointSearchViewController.swift"; sourceTree = SOURCE_ROOT; };
+		14C032602AB96E1C00615353 /* EntryPointSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EntryPointSearchViewController.xib; path = "VoiceOveriBeacon/Feature/路徑規劃/尋找入口/EntryPointSearchViewController.xib"; sourceTree = SOURCE_ROOT; };
+		14C032632AB96E3E00615353 /* PathNavigatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathNavigatingViewController.swift; sourceTree = "<group>"; };
+		14C032642AB96E3E00615353 /* PathNavigatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathNavigatingViewController.xib; sourceTree = "<group>"; };
+		14C032682AB97C9200615353 /* AppMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainCoordinator.swift; sourceTree = "<group>"; };
 		14FD1C4D2AA1B76A0090E3CC /* VoiceOveriBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceOveriBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +146,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147927A42AB98B1400D8AB30 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				147927A52AB98B1400D8AB30 /* FilterSearchPickerConfiguration.swift */,
+				147927A92AB98B1400D8AB30 /* Cell */,
+				147927AD2AB98B1400D8AB30 /* FilterSearchPicker.swift */,
+				147927AE2AB98B1400D8AB30 /* FilterSearchPickerViewModel.swift */,
+				147927AF2AB98B1400D8AB30 /* FilterSearchPickerViewController.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		147927A92AB98B1400D8AB30 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				147927AA2AB98B1400D8AB30 /* FSPTableViewCell.swift */,
+				147927AB2AB98B1400D8AB30 /* FSPTableViewCell.xib */,
+				147927AC2AB98B1400D8AB30 /* FSPCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		14C0325C2AB96DDB00615353 /* 路徑規劃 */ = {
+			isa = PBXGroup;
+			children = (
+				14C0325E2AB96DFC00615353 /* 導航中 */,
+				14C0325D2AB96DEC00615353 /* 尋找入口 */,
+			);
+			path = "路徑規劃";
+			sourceTree = "<group>";
+		};
+		14C0325D2AB96DEC00615353 /* 尋找入口 */ = {
+			isa = PBXGroup;
+			children = (
+				14C0325F2AB96E1C00615353 /* EntryPointSearchViewController.swift */,
+				14C032602AB96E1C00615353 /* EntryPointSearchViewController.xib */,
+			);
+			path = "尋找入口";
+			sourceTree = "<group>";
+		};
+		14C0325E2AB96DFC00615353 /* 導航中 */ = {
+			isa = PBXGroup;
+			children = (
+				14C032632AB96E3E00615353 /* PathNavigatingViewController.swift */,
+				14C032642AB96E3E00615353 /* PathNavigatingViewController.xib */,
+			);
+			path = "導航中";
+			sourceTree = "<group>";
+		};
+		14C032672AB97C7600615353 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */,
+				14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */,
+				14FD1C5E2AA1B76B0090E3CC /* LaunchScreen.storyboard */,
+				14C032682AB97C9200615353 /* AppMainCoordinator.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
 		14FD1C442AA1B76A0090E3CC = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +213,7 @@
 				14FD1C692AA1B76B0090E3CC /* VoiceOveriBeaconTests */,
 				14FD1C732AA1B76B0090E3CC /* VoiceOveriBeaconUITests */,
 				14FD1C4E2AA1B76A0090E3CC /* Products */,
+				B250D114C9B00EF0C3DC19E8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +230,10 @@
 		14FD1C4F2AA1B76A0090E3CC /* VoiceOveriBeacon */ = {
 			isa = PBXGroup;
 			children = (
+				14C032672AB97C7600615353 /* APP */,
 				14FD1C842AA1C1ED0090E3CC /* Feature */,
 				14FD1C832AA1C1E10090E3CC /* Shared */,
-				14FD1C502AA1B76A0090E3CC /* AppDelegate.swift */,
-				14FD1C522AA1B76A0090E3CC /* SceneDelegate.swift */,
 				14FD1C5C2AA1B76B0090E3CC /* Assets.xcassets */,
-				14FD1C5E2AA1B76B0090E3CC /* LaunchScreen.storyboard */,
 				14FD1C612AA1B76B0090E3CC /* Info.plist */,
 				14FD1C592AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld */,
 			);
@@ -187,6 +274,8 @@
 		14FD1C842AA1C1ED0090E3CC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				147927A42AB98B1400D8AB30 /* Component */,
+				14C0325C2AB96DDB00615353 /* 路徑規劃 */,
 				2A3E9C172AA36CD500A1C3F2 /* SoundSetting */,
 				14FD1C852AA1C1F50090E3CC /* HomePage */,
 			);
@@ -263,11 +352,20 @@
 		2A3E9C1C2AA3737400A1C3F2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				147927A72AB98B1400D8AB30 /* UIView+Subvie.swift */,
+				147927A82AB98B1400D8AB30 /* UIStackView+ArrangedSubview.swift */,
 				2A3E9C1D2AA3737400A1C3F2 /* UIView+Toast.swift */,
 				2A3E9C1E2AA3737400A1C3F2 /* UIView+Nib.swift */,
 				2A3E9C1F2AA3737400A1C3F2 /* UIColor+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B250D114C9B00EF0C3DC19E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +472,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C032662AB96E3E00615353 /* PathNavigatingViewController.xib in Resources */,
+				14C032622AB96E1C00615353 /* EntryPointSearchViewController.xib in Resources */,
 				2A3E9C102AA3675400A1C3F2 /* beep-08b.mp3 in Resources */,
 				14FD1C602AA1B76B0090E3CC /* LaunchScreen.storyboard in Resources */,
 				2A3E9C112AA3675400A1C3F2 /* beep.mp3 in Resources */,
@@ -381,6 +481,7 @@
 				2A3E9C0F2AA3675400A1C3F2 /* start.mp3 in Resources */,
 				2A3E9C1B2AA36CF100A1C3F2 /* SoundSettingViewController.xib in Resources */,
 				14FD1C5D2AA1B76B0090E3CC /* Assets.xcassets in Resources */,
+				147927B42AB98B1400D8AB30 /* FSPTableViewCell.xib in Resources */,
 				14FD1C582AA1B76A0090E3CC /* Main.storyboard in Resources */,
 				2A3E9C162AA36B2500A1C3F2 /* Resource.bundle in Resources */,
 			);
@@ -411,19 +512,30 @@
 				14FD1C5B2AA1B76A0090E3CC /* VoiceOveriBeacon.xcdatamodeld in Sources */,
 				14FD1C882AA1C2150090E3CC /* AccessibilityConstants.swift in Sources */,
 				14FD1C552AA1B76A0090E3CC /* HomePageViewController.swift in Sources */,
+				147927B62AB98B1400D8AB30 /* FilterSearchPicker.swift in Sources */,
+				147927B02AB98B1400D8AB30 /* FilterSearchPickerConfiguration.swift in Sources */,
+				147927B22AB98B1400D8AB30 /* UIStackView+ArrangedSubview.swift in Sources */,
 				2A3E9C002AA3552D00A1C3F2 /* iBeaconViewModel.swift in Sources */,
 				14FD1C8A2AA1C7B50090E3CC /* iBeaconModel.swift in Sources */,
 				2A3E9C212AA3737400A1C3F2 /* UIView+Nib.swift in Sources */,
 				2A3E9C1A2AA36CF100A1C3F2 /* SoundSettingViewController.swift in Sources */,
 				2A3E9C092AA362A000A1C3F2 /* FileReadWriteService.swift in Sources */,
+				147927B12AB98B1400D8AB30 /* UIView+Subvie.swift in Sources */,
+				14C032652AB96E3E00615353 /* PathNavigatingViewController.swift in Sources */,
+				147927B72AB98B1400D8AB30 /* FilterSearchPickerViewModel.swift in Sources */,
+				147927B82AB98B1400D8AB30 /* FilterSearchPickerViewController.swift in Sources */,
+				14C032612AB96E1C00615353 /* EntryPointSearchViewController.swift in Sources */,
 				146081E62AB4272000CAD2BC /* iBeaconDistanceDefinition.swift in Sources */,
 				14FD1C512AA1B76A0090E3CC /* AppDelegate.swift in Sources */,
 				2A1CCB2E2AB36187005B058D /* AppSetting.swift in Sources */,
 				2A3E9C072AA362A000A1C3F2 /* AVSpeechSynthesizerService.swift in Sources */,
 				2A3E9C202AA3737400A1C3F2 /* UIView+Toast.swift in Sources */,
 				14FD1C532AA1B76A0090E3CC /* SceneDelegate.swift in Sources */,
+				147927B32AB98B1400D8AB30 /* FSPTableViewCell.swift in Sources */,
+				14C032692AB97C9200615353 /* AppMainCoordinator.swift in Sources */,
 				2A3E9C082AA362A000A1C3F2 /* AudioPlayerService.swift in Sources */,
 				2A3E9C222AA3737400A1C3F2 /* UIColor+.swift in Sources */,
+				147927B52AB98B1400D8AB30 /* FSPCellViewModel.swift in Sources */,
 				2A1CCB2C2AB36168005B058D /* iBeaconConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,13 +716,10 @@
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceOveriBeacon/Info.plist;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
-				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -637,13 +746,10 @@
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceOveriBeacon/Info.plist;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
-				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "VoiceOverIBeacon需要取得藍芽權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "VoiceOverIBeacon需要取得定位權限，以使用iBeacon定位功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
